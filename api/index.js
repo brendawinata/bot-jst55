@@ -69,6 +69,18 @@ bot.on('message', (msg) => {
 
 
 // routers
+r.get('/predict/:i/:r', function(req, res, next) {    
+    model.predict(
+ 	[
+            parseFloat(req.params.i), // string to float
+            parseFloat(req.params.r)
+        ]
+    ).then((jres)=>{
+        res.json.(jres);
+    })
+});
+
+// routers
 r.get('/classify/:i/:r', function(req, res, next) {    
     model.predict(
         [
@@ -88,3 +100,5 @@ r.get('/classify/:i/:r', function(req, res, next) {
 	})
     })
  });
+
+module.exports = r;
