@@ -87,4 +87,4 @@ r.get('/classify/:i/:r', function(req, res, next) {
 	    res.json({jres, jres_})
 	})
     })
-});
+ });
